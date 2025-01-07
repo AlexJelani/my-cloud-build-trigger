@@ -20,7 +20,7 @@ resource "google_cloudbuild_trigger" "build_trigger" {
   name        = "build-on-push-to-master"
   description = "Trigger for master branch pushes"
   
-  service_account = "projects/my-cloud-build-trigger/serviceAccounts/terraform-sa@my-cloud-build-trigger.iam.gserviceaccount.com"
+  service_account = var.service_account
   
   trigger_template {
     branch_name = "master"
