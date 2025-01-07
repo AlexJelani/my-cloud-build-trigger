@@ -24,7 +24,7 @@ resource "google_cloudbuild_trigger" "build_trigger" {
   
   trigger_template {
     branch_name = "master"
-    repo_name   = "my-cloud-build-trigger"
+    repo_name   = "AlexJelani/my-cloud-build-trigger"
   }
   
   filename = "cloudbuild.yaml"
