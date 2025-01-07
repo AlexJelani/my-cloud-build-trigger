@@ -1,13 +1,3 @@
-output "project_id" {
-  value = var.project_id
-}
-
-
-
-output "service_account_email" {
-  value = google_service_account.terraform-sa.email
-}
-
 output "trigger_id" {
   value = google_cloudbuild_trigger.build_trigger.trigger_id
 }

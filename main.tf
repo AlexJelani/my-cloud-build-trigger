@@ -16,14 +16,16 @@ resource "google_project_iam_binding" "cloud_build_binding" {
 }
 
 resource "google_cloudbuild_trigger" "build_trigger" {
+  project     = "my-cloud-build-trigger"
   name        = "build-on-push-to-master"
   description = "Trigger for master branch pushes"
   
-  github {
-    name  = "my-cloud-build-trigger"
-    push {
-      branch = "^master$"
-    }
+  service_account = "projects/my-cloud-build-trigger/serviceAccounts/terraform-sa@my-cloud-build-trigger.iam.gserviceaccount.com"
+  
+  trigger_template {
+    branch_name = "master"
+    repo_name   = "my-cloud-build-trigger"
   }
+  
   filename = "cloudbuild.yaml"
 }
