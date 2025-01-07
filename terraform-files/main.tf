@@ -23,7 +23,7 @@ resource "google_cloudbuild_trigger" "build_trigger" {
   service_account = var.service_account
   
   trigger_template {
-    branch_name = "master"
+    branch_name = "main"
     repo_name   = "AlexJelani/my-cloud-build-trigger"
   }
   
