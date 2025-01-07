@@ -1,0 +1,28 @@
+# Terraform files
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Credentials and secrets
+*.json
+.env
+credentials/
+*-key.json
+terraform-sa-key.json
+
+# Local development
+.idea/
+.vscode/
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
